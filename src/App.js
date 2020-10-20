@@ -7,7 +7,9 @@ function App() {
   return (
     <>
       <Header />
-      <h1>Bem-vindo as lojas Mern</h1>
+      <main>
+        <h1>Bem-vindo as lojas Mern</h1>
+      </main>
       <Footer />
     </>
   );
