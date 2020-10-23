@@ -6,17 +6,21 @@ import HomeScreen from './screens/HomeScreen';
 
 import { Container } from 'react-bootstrap';
 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ProductScreen from './screens/ProductScreen';
+
 function App() {
   return (
-    <>
+    <Router>
       <Header />
       <Container>
         <main className="py-4">
-          <HomeScreen />
+          <Route to='/' exact component={HomeScreen}></Route>
+          <Route to='/product/:id' component={ProductScreen}></Route>
         </main>
       </Container>
       <Footer />
-    </>
+    </Router>
   );
 }
 
