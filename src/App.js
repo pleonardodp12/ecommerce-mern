@@ -1,27 +1,25 @@
 import React from 'react';
-import './App.css';
-import Footer from './components/Footer';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen';
-
-import { Container } from 'react-bootstrap';
-
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ProductScreen from './screens/ProductScreen';
+import './App.css';
+import { Container } from 'react-bootstrap';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <Header />
-      <Container>
-        <main className="py-4">
-          <Route to='/' exact component={HomeScreen}></Route>
-          <Route to='/product/:id' component={ProductScreen}></Route>
-        </main>
-      </Container>
-      <Footer />
+      <Header></Header>
+      <main>
+        <Container className='py-4'>
+          <Route path='/' component={HomeScreen} exact></Route>
+          <Route path='/product/:id' component={ProductScreen}></Route>
+        </Container>
+      </main>
+      <Footer></Footer>
     </Router>
   );
-}
+};
 
 export default App;
